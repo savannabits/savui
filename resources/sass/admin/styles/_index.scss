@@ -1,0 +1,32 @@
+// Write (or import) your styles here
+@import "tables";
+.modal-backdrop {
+    opacity: 0.5;
+}
+.modal-content {
+    box-shadow: 0 5px 10px $primary;
+    border-radius: 0;
+}
+.primary-shadow {
+    box-shadow: 0 5px 10px $primary;
+}
+
+.card {
+    border: none;
+    box-shadow: 0 0 4px lighten($primary,20);
+    &.card-flat {
+        box-shadow: 0 0 0 lighten($primary,20);
+        border: 1px solid $secondary
+    }
+    border-radius: 0 !important;
+    .card-header {
+        border-radius: 0;
+        background: lighten($primary,50);
+    }
+}
+.app-header.navbar .navbar-brand img {
+    max-width: 300px !important;
+    max-height: 100px !important;
+}
+@import "multiselect";
+@import "wizard";

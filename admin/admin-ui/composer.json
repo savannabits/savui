@@ -1,0 +1,52 @@
+{
+    "name": "savannabits/admin-ui",
+    "description": "Administration user interface template",
+    "keywords": [
+        "admin-ui",
+        "template",
+        "administration",
+        "admin",
+        "cms",
+        "laravel"
+    ],
+    "license": "MIT",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Samson Maosa",
+            "email": "smaosa@strathmore.edu",
+            "homepage": "https://www.savannabits.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2.5",
+        "illuminate/support": "^6.0|^7.0"
+    },
+    "require-dev": {
+        "orchestra/testbench-browser-kit": "~4.0",
+        "phpunit/phpunit": "^8.5",
+        "mockery/mockery": "0.9.*|^1.0"
+    },
+    "autoload": {
+        "classmap": [],
+        "psr-4": {
+            "Savannabits\\AdminUI\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Savannabits\\AdminUI\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Savannabits\\AdminUI\\AdminUIServiceProvider"
+            ]
+        },
+        "branch-alias": {
+            "dev-master": "4.0-dev"
+        }
+    }
+}

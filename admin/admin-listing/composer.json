@@ -1,0 +1,54 @@
+{
+    "name": "savannabits/admin-listing",
+    "description": "Query-building helper for listing of Eloquent models",
+    "keywords": [
+        "listing",
+        "eloquent",
+        "datatable",
+        "admin",
+        "cms",
+        "laravel"
+    ],
+    "license": "MIT",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Samson Maosa",
+            "email": "smaosa@strathmore.edu",
+            "homepage": "https://www.savannabits.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2.5",
+        "illuminate/support": "^6.0|^7.0"
+    },
+    "require-dev": {
+        "fzaninotto/faker": "~1.4",
+        "mockery/mockery": "0.9.*|^1.0",
+        "phpunit/phpunit": "^8.5",
+        "orchestra/testbench": "~4.0",
+        "savannabits/translatable": "^2.0"
+    },
+    "autoload": {
+        "classmap": [],
+        "psr-4": {
+            "Savannabits\\AdminListing\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Savannabits\\AdminListing\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Savannabits\\AdminListing\\AdminListingServiceProvider"
+            ]
+        },
+        "branch-alias": {
+            "dev-master": "3.0-dev"
+        }
+    }
+}

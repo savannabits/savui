@@ -1,0 +1,92 @@
+<?php
+
+namespace Savannabits\AdminTranslations\Console\Commands;
+
+use Illuminate\Console\Command;
+use Illuminate\Support\Facades\File;
+
+class AdminTranslationsInstall extends Command
+{
+    /**
+     * The name and signature of the console command.
+     *
+     * @var string
+     */
+    protected $signature = 'admin-translations:install';
+
+    /**
+     * The console command description.
+     *
+     * @var string
+     */
+    protected $description = 'Install a savannabits/admin-translations package';
+
+    /**
+     * Execute the console command.
+     *
+     * @return mixed
+     */
+    public function handle()
+    {
+        $this->info('Installing package savannabits/admin-translations');
+
+        $this->call('admin-ui:install');
+
+        $this->call('vendor:publish', [
+            '--provider' => "Savannabits\\AdminTranslations\\AdminTranslationsServiceProvider",
+        ]);
+
+        $this->call('vendor:publish', [
+            '--provider' => "Savannabits\\Translatable\\TranslatableServiceProvider",
+            '--tag' => 'config'
+        ]);
+
+        $this->frontendAdjustments();
+
+        $this->strReplaceInFile(
+            resource_path('views/admin/layout/sidebar.blade.php'),
+            '|url\(\'admin\/translations\'\)|',
+            '{{-- Do not delete me :) I\'m also used for auto-generation menu items --}}',
+            '<li class="nav-item"><a class="nav-link" href="{{ url(\'admin/translations\') }}"><i class="nav-icon icon-location-pin"></i> {{ __(\'Translations\') }}</a></li>
+            {{-- Do not delete me :) I\'m also used for auto-generation menu items --}}'
+        );
+
+        $this->call('migrate');
+
+        $this->info('Package savannabits/admin-translations installed');
+    }
+
+    /**
+     * @param $fileName
+     * @param $ifExistsRegex
+     * @param $find
+     * @param $replaceWith
+     * @return bool|int|void
+     */
+    private function strReplaceInFile($fileName, $ifExistsRegex, $find, $replaceWith)
+    {
+        $content = File::get($fileName);
+        if (preg_match($ifExistsRegex, $content)) {
+            return;
+        }
+
+        return File::put($fileName, str_replace($find, $replaceWith, $content));
+    }
+
+    /**
+     * Add admin translations assets to webpack mix
+     */
+    private function frontendAdjustments(): void
+    {
+        // webpack
+        $this->strReplaceInFile(
+            'webpack.mix.js',
+            '|vendor/savannabits/admin-translations|',
+            '// Do not delete this comment, it\'s used for auto-generation :)',
+            'path.resolve(__dirname, \'vendor/savannabits/admin-translations/resources/assets/js\'),
+				// Do not delete this comment, it\'s used for auto-generation :)'
+        );
+
+        $this->info('Admin Translation assets registered');
+    }
+}

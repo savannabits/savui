@@ -1,0 +1,12 @@
+//Bootstrap imports just for general styling
+@import "resources/sass/admin/variables";
+@import "resources/sass/admin/styles/form-wizard/bs_button";
+@import "resources/sass/admin/styles/form-wizard/bs_nav_pills";
+@import "resources/sass/admin/styles/form-wizard/bs_progress_bar";
+
+@import "resources/sass/admin/styles/form-wizard/variables";
+@import "resources/sass/admin/styles/form-wizard/mixins";
+//Form wizard related
+@import "resources/sass/admin/styles/form-wizard/buttons";
+@import "resources/sass/admin/styles/form-wizard/navs-pagination";
+@import "resources/sass/admin/styles/form-wizard/wizard-card";

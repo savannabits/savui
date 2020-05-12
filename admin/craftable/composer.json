@@ -1,0 +1,55 @@
+{
+    "name": "savannabits/craftable",
+    "description": "Administration toolkit for Laravel 7 - starting point for developing administration interface",
+    "keywords": [
+        "craftable",
+        "crud",
+        "savannabits",
+        "admin",
+        "administration",
+        "toolkit",
+        "framework",
+        "cms",
+        "laravel"
+    ],
+    "license": "MIT",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Samson Maosa",
+            "email": "smaosa@strathmore.edu",
+            "homepage": "https://www.savannabits.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2.5",
+        "savannabits/admin-auth": "^5.0",
+        "savannabits/admin-listing": "^3.0",
+        "savannabits/admin-translations": "^4.0",
+        "savannabits/admin-ui": "^4.0",
+        "savannabits/advanced-logger": "^2.0",
+        "savannabits/media": "^4.0",
+        "savannabits/translatable": "^2.0",
+        "illuminate/support": "^6.0|^7.0",
+        "spatie/laravel-permission": "^3.0",
+        "spatie/laravel-backup": "^6.0",
+        "maatwebsite/excel": "^3.1"
+    },
+    "autoload": {
+        "classmap": [],
+        "psr-4": {
+            "Savannabits\\Craftable\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Savannabits\\Craftable\\CraftableServiceProvider"
+            ]
+        },
+        "branch-alias": {
+            "dev-master": "5.0-dev"
+        }
+    }
+}

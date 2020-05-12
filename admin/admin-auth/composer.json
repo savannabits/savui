@@ -1,0 +1,56 @@
+{
+    "name": "savannabits/admin-auth",
+    "description": "Authentication interface for savannabits/admin-ui",
+    "keywords": [
+        "auth",
+        "authentication",
+        "login",
+        "user",
+        "admin",
+        "cms",
+        "laravel"
+    ],
+    "license": "MIT",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Samson Maosa",
+            "email": "smaosa@savannabits.edu",
+            "homepage": "https://www.savannabits.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2.5",
+        "savannabits/admin-ui": "^4.0",
+        "savannabits/media": "^4.0",
+        "illuminate/support": "^6.0|^7.0",
+        "spatie/laravel-permission": "^3.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "~4.0",
+        "mockery/mockery": "^1.0",
+        "phpunit/phpunit": "^8.5"
+    },
+    "autoload": {
+        "classmap": [],
+        "psr-4": {
+            "Savannabits\\AdminAuth\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Savannabits\\AdminAuth\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Savannabits\\AdminAuth\\AdminAuthServiceProvider"
+            ]
+        },
+        "branch-alias": {
+            "dev-master": "5.0-dev"
+        }
+    }
+}

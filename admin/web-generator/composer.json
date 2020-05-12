@@ -1,0 +1,56 @@
+{
+    "name": "savannabits/web-generator",
+    "description": "Laravel 7 CRUD generator for savannabits/craftable",
+    "keywords": [
+        "generator",
+        "make",
+        "crud",
+        "admin",
+        "cms",
+        "laravel",
+        "craftable"
+    ],
+    "license": "MIT",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Samson Maosa",
+            "email": "smaosa@strathmore.edu",
+            "homepage": "https://www.savannabits.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2.5",
+        "illuminate/support": "^6.0|^7.0",
+        "illuminate/console": "^6.0|^7.0",
+        "doctrine/dbal": "^2.6.0",
+        "laravel/helpers": "~1.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "~4.0",
+        "mockery/mockery": "^1.0",
+        "phpunit/phpunit": "^8.5"
+    },
+    "autoload": {
+        "classmap": [],
+        "psr-4": {
+            "Savannabits\\WebGenerator\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Savannabits\\WebGenerator\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Savannabits\\WebGenerator\\WebGeneratorServiceProvider"
+            ]
+        },
+        "branch-alias": {
+            "dev-master": "5.0-dev"
+        }
+    }
+}

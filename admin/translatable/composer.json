@@ -1,0 +1,56 @@
+{
+    "name": "savannabits/translatable",
+    "description": "Make your Eloquent models and other content translated into multiple languages",
+    "keywords": [
+        "translations",
+        "eloquent",
+        "language",
+        "locale",
+        "translate",
+        "localization",
+        "admin",
+        "cms",
+        "laravel"
+    ],
+    "license": "MIT",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Samson Maosa",
+            "email": "smaosa@strathmore.edu",
+            "homepage": "https://www.savannabits.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.2.5",
+        "laravel/framework": "6.*|7.*",
+        "spatie/laravel-translatable": "^4.2",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^8.5",
+        "orchestra/testbench": "~4.0"
+    },
+    "autoload": {
+        "classmap": [],
+        "psr-4": {
+            "Savannabits\\Translatable\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Savannabits\\Translatable\\Test\\": "tests"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Savannabits\\Translatable\\TranslatableServiceProvider"
+            ]
+        },
+        "branch-alias": {
+            "dev-master": "2.0-dev"
+        }
+    }
+}

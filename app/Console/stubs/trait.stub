@@ -1,0 +1,11 @@
+<?php
+/**
+ * @author smaosa@strathmore.edu
+ *
+ */
+namespace DummyNamespace;
+
+trait DummyClass
+{
+    //
+}

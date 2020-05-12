@@ -1,0 +1,78 @@
+table th a:not([href]) {
+  cursor: pointer;
+}
+
+.table-hover tbody tr:hover {
+  background-color: #edf3fe;
+}
+
+.table-listing thead th {
+  border: none;
+}
+
+.table-listing thead tr {
+  border-bottom: 1px solid #f0f2f5;
+  border-top: 1px solid #dee3e7;
+}
+
+.table-listing td {
+  border-top: 1px solid #f0f2f5;
+  vertical-align: middle;
+}
+
+.table-listing .row.no-gutters .btn {
+  margin-right: 10px;
+  @media (max-width: 1319px) {
+    margin-bottom: 10px;
+  }
+}
+
+.table-listing td:last-of-type {
+  min-width: 95px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+td > .switch {
+  top: 4px;
+}
+
+@media (max-width: 991px) {
+  .table-listing {
+    td {
+      display: table-cell;
+    }
+    th {
+        display: table-cell;
+    }
+    tbody tr {
+      display: table-row;
+
+      //flex-direction: row;
+      //justify-content: center;
+    }
+    thead tr {
+      display: table-row;
+        overflow: no-content;
+      //flex-direction: row;
+      //justify-content: center;
+    }
+
+    th:last-of-type,
+    td:last-of-type,
+    th:nth-of-type(2),
+    td:nth-of-type(2) {
+      display: flex;
+        flex-direction: row;
+    }
+    td:last-of-type {
+      padding-right: 0;
+    }
+  }
+  td:nth-of-type(2) {
+    overflow: hidden;
+  }
+}
+.table-listing {
+    @extend .table-responsive-lg
+}
