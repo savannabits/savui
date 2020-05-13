@@ -51,7 +51,6 @@ trait AuthenticatesApiUsers
                 ]);
             } else {
                 $token = $user->createToken($request->device_name)->plainTextToken;
-                logUserLogin($user,'api');
                 return jsonRes(true, "Login successful", ["token" => $token, "user" => $user]);
             }
         } catch (ValidationException $exception) {

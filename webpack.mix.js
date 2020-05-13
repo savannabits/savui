@@ -1,5 +1,5 @@
 const mix = require('laravel-mix');
-
+const tailwindcss = require('tailwindcss')
 require('laravel-mix-tailwind');
 
 /*
@@ -12,15 +12,40 @@ require('laravel-mix-tailwind');
  | file for the application as well as bundling up all the JS files.
  |
  */
-mix.setResourceRoot(`/${process.env.MIX_APP_URI || ''}/`);
+// mix.browserSync(process.env.MIX_APP_URL);
+mix.setResourceRoot(`${process.env.MIX_APP_URI || ''}`);
+mix.webpackConfig({
+    output: {
+        chunkFilename: `js/[name].js`,
+        filename: "[name].js",
+        publicPath: `/${process.env.MIX_APP_URI ? process.env.MIX_APP_URI+'/' : ''}`
+    }
+});
 
-mix.js('resources/js/app.js', 'public/js')
-   .postCss('resources/css/app.css', 'public/css')
-   .tailwind('./tailwind.config.js');
-mix.js(['resources/js/admin/admin.js'], 'public/js')
+mix
+    .extract([
+        // 'core-js/stable',
+        // 'regenerator-runtime/runtime',
+        'vue',
+        'jquery',
+        'bootstrap',
+        'bootstrap-vue',
+        'vue-multiselect',
+        'vue-quill-editor',
+        'vue-notification',
+        'vue2-filters',
+        'vue-form-wizard',
+        'axios',
+        'vue-loading-overlay',
+        'vue-observe-visibility',
+        'vue-bootstrap-typeahead',
+        'vue-cookie',
+        'moment',
+    ]);
+mix
+    .js('resources/js/app.js', 'public/js')
+    .js(['resources/js/admin/admin.js'], 'public/js')
     .js(['resources/js/web/web.js'],'public/js')
-    .sass('resources/sass/admin/admin.scss', 'public/css')
-    .sass('resources/sass/admin/styles/wizard.scss', 'public/css');
 
 if (mix.inProduction()) {
   mix

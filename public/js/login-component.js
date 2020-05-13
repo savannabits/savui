@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[6],{DYCP:function(n,o,e){"use strict";e.r(o);var t={data:function(){return{}},mounted:function(){console.log("Here I am ")}};o.default=t}}]);

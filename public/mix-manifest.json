@@ -1,8 +1,9 @@
 {
-    "/js/admin.js": "/js/admin.js",
-    "/js/app.js": "/js/app.js",
-    "/css/admin.css": "/css/admin.css",
-    "/css/wizard.css": "/css/wizard.css",
-    "/css/app.css": "/css/app.css",
-    "/js/web.js": "/js/web.js"
+    "/js/manifest.js": "/js/manifest.js?id=73cda1bc0d4c7b4fd161",
+    "/js//js/vendor.js": "/js//js/vendor.js?id=1b77fea4db55a000a32e",
+    "/js//js/admin.js": "/js//js/admin.js?id=d04ee05f55a1041e5008",
+    "/js//js/app.js": "/js//js/app.js?id=5e03bd40beed009586db",
+    "/js//js/web.js": "/js//js/web.js?id=c43f003cd88da02aeca8",
+    "/js/example-component.js": "/js/example-component.js?id=b71c3ad7d9410e72e994",
+    "/js/login-component.js": "/js/login-component.js?id=88fc5bd3a1fa86a058a9"
 }

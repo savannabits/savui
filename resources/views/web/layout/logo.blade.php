@@ -5,5 +5,5 @@
 </a>
 
 <a href="{{route('home')}}" class="navbar-brand">
-    <span class="text-white">Materials Control</span>
+    <span class="text-white">MyStrath</span>
 </a>

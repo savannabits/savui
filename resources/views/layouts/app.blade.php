@@ -9,9 +9,7 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
-
+    <link rel="stylesheet" href="//rsms.me/inter/inter.css">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -49,5 +47,9 @@
 
         @yield('content')
     </div>
+    <!-- Scripts -->
+    <script src="{{ mix('/js/manifest.js') }}"></script>
+    <script src="{{ mix('/js//js/vendor.js') }}"></script>
+    <script src="{{ mix('/js//js/app.js') }}"></script>
 </body>
 </html>

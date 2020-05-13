@@ -44,15 +44,9 @@ Route::middleware(['auth:' . config('admin-auth.defaults.guard'), 'admin'])->gro
         Route::post('/password',                                    'ProfileController@updatePassword')->name('update-password');
     });
 });
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-Auth::routes();
-
+Route::group(['middleware' => 'cas.auth'], function () {
+    Auth::routes(['register' => false]);
+});
+Route::middleware(['auth'])->any('logout',"Auth\LoginController@logout")->name('web.logout');
 Route::get('/home', 'HomeController@index')->name('home');
 
