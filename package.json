@@ -40,6 +40,7 @@
         "@tailwindcss/ui": "^0.3.0",
         "browser-sync": "^2.26.7",
         "browser-sync-webpack-plugin": "^2.2.2",
+        "laravel-mix-merge-manifest": "^0.1.2",
         "vue-tailwind": "^0.4.6"
     }
 }

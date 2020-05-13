@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
+use App\User;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Http\Request;
 
@@ -73,7 +74,6 @@ class LoginController extends Controller
             \Log::info("Logging in $user->username");
             \Auth::login($user);
             \Log::info("sending login response");
-            logUserLogin($user,"web");
             return $this->sendLoginResponse($request);
         } catch (\Throwable $exception) {
             \Log::error($exception);

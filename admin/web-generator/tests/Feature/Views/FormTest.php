@@ -39,8 +39,8 @@ class FormTest extends TestCase
         $this->assertFileExists($indexJsPath);
         $this->assertFileExists($bootstrapJsPath);
         $this->assertStringStartsWith('<div ', File::get($elementsPath));
-        $this->assertStringStartsWith('@extends(\'frontend.layout.base.layout.default\')', File::get($createPath));
-        $this->assertStringStartsWith('@extends(\'frontend.layout.base.layout.default\')', File::get($editPath));
+        $this->assertStringStartsWith('@extends(\'web.layout.base.layout.default\')', File::get($createPath));
+        $this->assertStringStartsWith('@extends(\'web.layout.base.layout.default\')', File::get($editPath));
         $this->assertStringStartsWith('import AppForm from \'../app-components/Form/AppForm\';
 
 Vue.component(\'category-form\', {
@@ -78,8 +78,8 @@ Vue.component(\'category-form\', {
         $this->assertFileExists($indexJsPath);
         $this->assertFileExists($bootstrapJsPath);
         $this->assertStringStartsWith('<div ', File::get($elementsPath));
-        $this->assertStringStartsWith('@extends(\'frontend.layout.base.layout.default\')', File::get($createPath));
-        $this->assertStringStartsWith('@extends(\'frontend.layout.base.layout.default\')', File::get($editPath));
+        $this->assertStringStartsWith('@extends(\'web.layout.base.layout.default\')', File::get($createPath));
+        $this->assertStringStartsWith('@extends(\'web.layout.base.layout.default\')', File::get($editPath));
         $this->assertStringStartsWith('import AppForm from \'../app-components/Form/AppForm\';
 
 Vue.component(\'billing-my-article-form\', {

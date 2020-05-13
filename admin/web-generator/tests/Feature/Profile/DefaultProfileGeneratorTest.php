@@ -69,7 +69,7 @@ Route::middleware([\'auth:\' . config(\'admin-auth.defaults.guard\'), \'admin\']
     });
 });',
             File::get($filePathRoute));
-        $this->assertStringStartsWith('@extends(\'frontend.layout.base.layout.default\')
+        $this->assertStringStartsWith('@extends(\'web.layout.base.layout.default\')
 
 @section(\'title\', trans(\'admin.admin-user.actions.edit_profile\'))
 
@@ -83,7 +83,7 @@ Route::middleware([\'auth:\' . config(\'admin-auth.defaults.guard\'), \'admin\']
         $this->assertStringStartsWith('import AppForm from \'../app-components/Form/AppForm\';
 
 Vue.component(\'profile-edit-profile-form\'', File::get($formJsPathProfile));
-        $this->assertStringStartsWith('@extends(\'frontend.layout.base.layout.default\')
+        $this->assertStringStartsWith('@extends(\'web.layout.base.layout.default\')
 
 @section(\'title\', trans(\'admin.admin-user.actions.edit_password\'))
 

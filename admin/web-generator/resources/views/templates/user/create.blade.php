@@ -1,4 +1,4 @@
-{{'@'}}extends('frontend.layout.base.layout.default')
+{{'@'}}extends('web.layout.base.layout.default')
 
 {{'@'}}section('title', trans('admin.{{ $modelLangFormat }}.actions.create'))
 
@@ -24,7 +24,7 @@
 
                     <div class="card-body">
 
-                        {{'@'}}include('frontend.{{ $modelDotNotation }}.components.form-elements')
+                        {{'@'}}include('web.{{ $modelDotNotation }}.components.form-elements')
 
                     </div>
 

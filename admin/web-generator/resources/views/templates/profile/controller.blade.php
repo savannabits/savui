@@ -55,7 +55,7 @@ class ProfileController extends Controller
     {
         $this->setUser($request);
 
-        return view('frontend.profile.edit-profile', [
+        return view('web.profile.edit-profile', [
             '{{ $modelVariableName }}' => $this->{{ $modelVariableName }},
         ]);
     }
@@ -111,7 +111,7 @@ class ProfileController extends Controller
     {
         $this->setUser($request);
 
-        return view('frontend.profile.edit-password', [
+        return view('web.profile.edit-password', [
             '{{ $modelVariableName }}' => $this->{{ $modelVariableName }},
         ]);
     }

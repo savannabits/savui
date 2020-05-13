@@ -1,23 +1,18 @@
 (window["webpackJsonp"] = window["webpackJsonp"] || []).push([[0],{
 
-/***/ "./resources/js/frontend-components/LoginComponent.js":
-/*!************************************************************!*\
-  !*** ./resources/js/frontend-components/LoginComponent.js ***!
-  \************************************************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./resources/js/web/user/index.js":
+/*!****************************************!*\
+  !*** ./resources/js/web/user/index.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-var LoginComponent = {
-  data: function data() {
-    return {};
-  },
-  mounted: function mounted() {
-    console.log("Here I am ");
-  }
-};
-/* harmony default export */ __webpack_exports__["default"] = (LoginComponent);
+Vue.component("user-listing", function () {
+  return __webpack_require__.e(/*! import() | user-listing */ "user-listing").then(__webpack_require__.bind(null, /*! ./Listing */ "./resources/js/web/user/Listing.js"));
+});
+Vue.component("user-form", function () {
+  return __webpack_require__.e(/*! import() | user-form */ "user-form").then(__webpack_require__.bind(null, /*! ./Form */ "./resources/js/web/user/Form.js"));
+});
 
 /***/ })
 

@@ -67,7 +67,7 @@ class ViewIndex extends ViewGenerator {
             $this->viewJs = 'templates.'.$template.'.listing-js';
         }
 
-        $viewPath = resource_path('views/frontend/'.$this->modelViewsDirectory.'/index.blade.php');
+        $viewPath = resource_path('views/web/'.$this->modelViewsDirectory.'/index.blade.php');
         $listingJsPath = resource_path('js/web/'.$this->modelJSName.'/Listing.js');
         $indexJsPath = resource_path('js/web/'.$this->modelJSName.'/index.js');
         $bootstrapJsPath = resource_path('js/web/index.js');

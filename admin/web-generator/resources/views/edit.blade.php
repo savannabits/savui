@@ -1,4 +1,4 @@
-{{'@'}}extends('frontend.layout.base.layout.default')
+{{'@'}}extends('web.layout.base.layout.default')
 
 {{'@'}}section('title', trans('admin.{{ $modelLangFormat }}.actions.edit', ['name' => ${{ $modelVariableName }}->{{$modelTitle}}]))
 
@@ -33,13 +33,13 @@
                                     <i class="fa fa-pencil"></i> {{'{{'}} trans('admin.{{ $modelLangFormat }}.actions.edit', ['name' => ${{ $modelVariableName }}->{{$modelTitle}}]) }}
                                 </div>
                                 <div class="card-body">
-                                    {{'@'}}include('frontend.{{ $modelDotNotation }}.components.form-elements')
+                                    {{'@'}}include('web.{{ $modelDotNotation }}.components.form-elements')
                                 </div>
                             </div>
                         </div>
 
                         <div class="col-md-12 col-lg-12 col-xl-5 col-xxl-4">
-                            {{'@'}}include('frontend.{{ $modelDotNotation }}.components.form-elements-right', ['showHistory' => true])
+                            {{'@'}}include('web.{{ $modelDotNotation }}.components.form-elements-right', ['showHistory' => true])
                         </div>
                     </div>
                     @else
@@ -49,7 +49,7 @@
                     </div>
 
                     <div class="card-body">
-                        {{'@'}}include('frontend.{{ $modelDotNotation }}.components.form-elements')
+                        {{'@'}}include('web.{{ $modelDotNotation }}.components.form-elements')
                     </div>
                     @endif
 

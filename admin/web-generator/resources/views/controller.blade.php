@@ -96,7 +96,7 @@ class {{ $controllerBaseName }} extends Controller
             return ['data' => $data];
         }
 
-        return view('frontend.{{ $modelDotNotation }}.index', ['data' => $data]);
+        return view('web.{{ $modelDotNotation }}.index', ['data' => $data]);
     }
 
     /**
@@ -110,13 +110,13 @@ class {{ $controllerBaseName }} extends Controller
         $this->authorize('{{ $modelDotNotation }}.create');
 
 @if (count($relations) && count($relations['belongsToMany']))
-        return view('frontend.{{ $modelDotNotation }}.create',[
+        return view('web.{{ $modelDotNotation }}.create',[
 @foreach($relations['belongsToMany'] as $belongsToMany)
             '{{ $belongsToMany['related_table'] }}' => {{ $belongsToMany['related_model_name'] }}::all(),
 @endforeach
         ]);
 @else
-        return view('frontend.{{ $modelDotNotation }}.create');
+        return view('web.{{ $modelDotNotation }}.create');
 @endif
     }
 
@@ -188,7 +188,7 @@ class {{ $controllerBaseName }} extends Controller
                 @endforeach
             @endif
         @endif
-        return view('frontend.{{ $modelDotNotation }}.show', [
+        return view('web.{{ $modelDotNotation }}.show', [
         '{{ $modelVariableName }}' => ${{ $modelVariableName }},
         @if (count($relations))
             @if (count($relations['belongsToMany']))
@@ -229,7 +229,7 @@ class {{ $controllerBaseName }} extends Controller
 
 @endif
 @endif
-        return view('frontend.{{ $modelDotNotation }}.edit', [
+        return view('web.{{ $modelDotNotation }}.edit', [
             '{{ $modelVariableName }}' => ${{ $modelVariableName }},
 @if (count($relations))
 @if (count($relations['belongsToMany']))

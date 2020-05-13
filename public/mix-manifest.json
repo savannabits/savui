@@ -1,9 +1,16 @@
 {
-    "/js/manifest.js": "/js/manifest.js?id=73cda1bc0d4c7b4fd161",
-    "/js//js/vendor.js": "/js//js/vendor.js?id=1b77fea4db55a000a32e",
-    "/js//js/admin.js": "/js//js/admin.js?id=d04ee05f55a1041e5008",
-    "/js//js/app.js": "/js//js/app.js?id=5e03bd40beed009586db",
-    "/js//js/web.js": "/js//js/web.js?id=c43f003cd88da02aeca8",
-    "/js/example-component.js": "/js/example-component.js?id=b71c3ad7d9410e72e994",
-    "/js/login-component.js": "/js/login-component.js?id=88fc5bd3a1fa86a058a9"
+    "/js//js/admin.js": "/js//js/admin.js",
+    "/js//js/app.js": "/js//js/app.js",
+    "/js/manifest.js": "/js/manifest.js",
+    "/js//js/vendor.js": "/js//js/vendor.js",
+    "/js//js/web.js": "/js//js/web.js",
+    "/js/example-component.js": "/js/example-component.js",
+    "/js/login-component.js": "/js/login-component.js",
+    "/css/app.css": "/css/app.css?id=11f9ac7f1cadc0da2bed",
+    "/css/admin.css": "/css/admin.css?id=f540cb78d2f3d74954f1",
+    "/css/wizard.css": "/css/wizard.css?id=01dcf98475ce33a3f4f0",
+    "/js/role-listing.js": "/js/role-listing.js",
+    "/js/role-form.js": "/js/role-form.js",
+    "/js/user-form.js": "/js/user-form.js",
+    "/js/user-listing.js": "/js/user-listing.js"
 }

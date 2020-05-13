@@ -5,35 +5,73 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Sanctum\HasApiTokens;
+use Savannabits\AdminAuth\Activation\Traits\CanActivate;
+use Savannabits\AdminAuth\Notifications\ResetPassword;
+use Spatie\Permission\Traits\HasRoles;
 
 class User extends Authenticatable
 {
-    use Notifiable;
+    use CanActivate,HasRoles,HasApiTokens, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name',
+        'email',
+        'email_verified_at',
+        'password',
+        'username',
+        'first_name',
+        'middle_name',
+        'last_name'
+    ];
+    protected $searchable = [
+        "id",
+        'name',
+        'email',
+        'username',
+        'first_name',
+        'middle_name',
+        'last_name',
     ];
 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
     protected $hidden = [
-        'password', 'remember_token',
+        'password',
+        'remember_token',
+
     ];
 
-    /**
-     * The attributes that should be cast to native types.
-     *
-     * @var array
-     */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
+    protected $dates = [
+        'email_verified_at',
+        'created_at',
+        'updated_at',
+        'last_login_at',
+        'deleted_at',
+
     ];
+
+
+
+    protected $appends = ['full_name', 'resource_url'];
+
+    /* ************************ ACCESSOR ************************* */
+
+    public function getResourceUrlAttribute() {
+        return url('/users/'.$this->getKey());
+    }
+
+    public function getFullNameAttribute() {
+        return "$this->first_name ". ($this->middle_name ? "$this->middle_name ": "")."$this->last_name";
+    }
+    /**
+     * Send the password reset notification.
+     *
+     * @param string $token
+     * @return void
+     */
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(app( ResetPassword::class, ['token' => $token]));
+    }
+
+    /* ************************ RELATIONS ************************ */
 }

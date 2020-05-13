@@ -8,38 +8,13 @@
 
     <div class="app-body">
 
-        @if(View::exists('web.layout.sidebar') && collect(currentRestaurant())->has('id'))
+        @if(View::exists('web.layout.sidebar'))
             @include('web.layout.sidebar')
         @endif
 
-        <main class="main {{collect(currentRestaurant())->has('id') ?: 'ml-auto'}}">
+        <main class="main">
 
             <div class="container-fluid" id="app" :class="{'loading': loading}">
-                {{--Outlet Switcher--}}
-                <restaurant-switcher
-                    :data="{{collect(['restaurant' => currentRestaurant()])->toJson()}}"
-                    :action="'{{ route('api.switch-restaurant') }}'"
-                    v-cloak
-                    inline-template>
-                    <div class="card card-body">
-                        <div class="d-flex align-items-center justify-content-center">
-                            <div v-if="form.restaurant && form.restaurant.id" class="font-weight-bolder text-danger">Restaurant: <span class="text-primary">@{{ form.restaurant.display_name  }}</span></div>
-                            <div class="font-weight-bolder text-danger" v-else>No Restaurant Selected</div>
-                            <form class="form-horizontal ml-2 form-create"  method="post" @submit.prevent="switchRestaurant" novalidate>
-                                <b-button type="button" variant="danger" v-b-modal.select-restaurant><i class="fa fa-exchange"></i> Switch</b-button>
-                                <b-modal ok-only ok-title="Submit" id="select-restaurant" @hidden="switchRestaurant">
-                                    <div class="form-group row align-items-center" :class="{'has-danger': errors.has('restaurant'), 'has-success': fields.restaurant && fields.restaurant.valid }">
-                                        <label for="restaurant" class="col-form-label text-md-right col-md-4">{{ trans('Select Restaurant') }}</label>
-                                        <div class="col">
-                                            <multiselect :options="{{collect(Auth::user()->restaurants ?? [])->toJson()}}" label="display_name" track-by="id" v-model="form.restaurant" v-validate="'required'" @change="validate($event)" :class="{'form-control-danger': errors.has('restaurant'), 'form-control-success': fields.restaurant && fields.restaurant.valid}" id="restaurant" name="restaurant" placeholder="{{ trans('Restaurant') }}"></multiselect>
-                                            <div v-if="errors.has('restaurant')" class="form-control-feedback form-text" v-cloak>@{{ errors.first('restaurant') }}</div>
-                                        </div>
-                                    </div>
-                                </b-modal>
-                            </form>
-                        </div>
-                    </div>
-                </restaurant-switcher>
                 <div class="modals">
                     <v-dialog/>
                 </div>
@@ -67,9 +42,7 @@
                 @if (\Session::has('warning'))
                     <div class="alert alert-danger"> {{\Session::get('warning')}}</div>
                 @endif
-                @if (collect(currentRestaurant())->has('id'))
-                    @yield('body')
-                @endif
+                @yield('body')
             </div>
         </main>
     </div>

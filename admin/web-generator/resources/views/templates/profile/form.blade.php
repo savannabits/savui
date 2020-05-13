@@ -1,7 +1,7 @@
                         <div class="row">
                             <div class="col-md-4 text-center">
                                 <div class="avatar-upload">
-                                    {{"@"}}include('frontend.layout.base.includes.avatar-uploader', [
+                                    {{"@"}}include('web.layout.base.includes.avatar-uploader', [
                                         'mediaCollection' => app(\App\User::class)->getMediaCollection('avatar'),
                                         'media' => ${{$modelVariableName}}->getThumbs200ForCollection('avatar')
                                     ])

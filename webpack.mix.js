@@ -1,7 +1,7 @@
 const mix = require('laravel-mix');
 const tailwindcss = require('tailwindcss')
 require('laravel-mix-tailwind');
-
+require('laravel-mix-merge-manifest')
 /*
  |--------------------------------------------------------------------------
  | Mix Asset Management
@@ -41,11 +41,13 @@ mix
         'vue-bootstrap-typeahead',
         'vue-cookie',
         'moment',
+        'craftable',
     ]);
 mix
     .js('resources/js/app.js', 'public/js')
     .js(['resources/js/admin/admin.js'], 'public/js')
     .js(['resources/js/web/web.js'],'public/js')
+    .mergeManifest()
 
 if (mix.inProduction()) {
   mix
