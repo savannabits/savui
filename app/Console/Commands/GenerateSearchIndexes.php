@@ -2,31 +2,8 @@
 
 namespace App\Console\Commands;
 
-use App\Article;
-use App\BulkDispatch;
-use App\BulkDispatchItem;
-use App\BulkRequest;
-use App\BulkRequestArticleItem;
-use App\BulkRequestRecipeItem;
-use App\Depot;
-use App\DerivedUnit;
-use App\Disposal;
-use App\FoodReturn;
-use App\Login;
-use App\Lpo;
-use App\Outlet;
 use App\Permission;
-use App\ProductDispatch;
-use App\ProductDispatchItem;
-use App\PurchaseOrder;
-use App\Recipe;
 use App\Role;
-use App\SingleItemDispatch;
-use App\SingleItemRequest;
-use App\SingleRecipeDispatch;
-use App\SingleRecipeDispatchItem;
-use App\SingleRecipeRequest;
-use App\SingleRecipeRequestItem;
 use App\User;
 use Illuminate\Console\Command;
 
@@ -46,6 +23,8 @@ class GenerateSearchIndexes extends Command
      */
     protected $description = 'Generate Search Indices';
     private $models = [
+        Role::class,
+        Permission::class,
     ];
 
     /**

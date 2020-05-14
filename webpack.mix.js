@@ -27,12 +27,14 @@ mix
         // 'core-js/stable',
         // 'regenerator-runtime/runtime',
         'vue',
+        'lodash',
         'jquery',
-        'bootstrap',
+        // 'bootstrap',
         'bootstrap-vue',
         'vue-multiselect',
         'vue-quill-editor',
         'vue-notification',
+        'vue-js-modal',
         'vue2-filters',
         'vue-form-wizard',
         'axios',
@@ -42,6 +44,7 @@ mix
         'vue-cookie',
         'moment',
         'craftable',
+        'vue-tailwind',
     ]);
 mix
     .js('resources/js/app.js', 'public/js')
@@ -51,5 +54,5 @@ mix
 
 if (mix.inProduction()) {
   mix
-   .version();
+      .version();
 }

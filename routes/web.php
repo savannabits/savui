@@ -100,3 +100,20 @@ Route::middleware(['auth:' . config('auth.defaults.guard')])->group(static funct
         });
     });
 });
+
+
+/* Auto-generated web routes */
+Route::middleware(['auth:' . config('auth.defaults.guard')])->group(static function () {
+    Route::prefix('')->namespace('Web')->name('web/')->group(static function() {
+        Route::prefix('permissions')->name('permissions/')->group(static function() {
+            Route::get('/',                                             'PermissionsController@index')->name('index');
+            Route::get('/create',                                       'PermissionsController@create')->name('create');
+            Route::post('/',                                            'PermissionsController@store')->name('store');
+            Route::get('/{permission}/edit',                            'PermissionsController@edit')->name('edit');
+            Route::get('/{permission}/show',                            'PermissionsController@show')->name('show');
+            Route::post('/bulk-destroy',                                'PermissionsController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{permission}',                                'PermissionsController@update')->name('update');
+            Route::delete('/{permission}',                              'PermissionsController@destroy')->name('destroy');
+        });
+    });
+});

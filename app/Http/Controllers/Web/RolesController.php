@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Web;
 
+use App\Helpers\SavbitsHelper;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Web\Role\BulkDestroyRole;
 use App\Http\Requests\Web\Role\DestroyRole;
@@ -9,7 +10,9 @@ use App\Http\Requests\Web\Role\IndexRole;
 use App\Http\Requests\Web\Role\StoreRole;
 use App\Http\Requests\Web\Role\UpdateRole;
 use App\Role;
-use Savannabits\AdminListing\Facades\AdminListing;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Http\Request;
+use Maatwebsite\Excel\Excel;
 use Exception;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Contracts\Routing\ResponseFactory;
@@ -32,16 +35,7 @@ class RolesController extends Controller
     public function index(IndexRole $request)
     {
         // create and AdminListing instance for a specific model and
-        $data = AdminListing::create(Role::class)->processRequestAndGet(
-            // pass the request with params
-            $request,
-
-            // set columns to query
-            ['id', 'name', 'guard_name'],
-
-            // set columns to searchIn
-            ['id', 'name', 'guard_name']
-        );
+        $data = SavbitsHelper::listing(Role::class, $request)->process();
 
         if ($request->ajax()) {
             if ($request->has('bulk')) {
@@ -83,10 +77,10 @@ class RolesController extends Controller
         $role = Role::create($sanitized);
 
         if ($request->ajax()) {
-            return ['redirect' => url('roles'), 'message' => trans('savannabits/admin-ui::admin.operation.succeeded')];
+            return ['redirect' => url($role->resource_url."/edit"), 'message' => trans('brackets/admin-ui::admin.operation.succeeded')];
         }
 
-        return redirect(url('/roles'));
+        return redirect(url($role->resource_url."/edit"));
     }
 
     /**
@@ -100,7 +94,7 @@ class RolesController extends Controller
     {
         $this->authorize('role.show', $role);
 
-        
+
                 return view('web.role.show', [
         'role' => $role,
                 ]);
@@ -116,8 +110,7 @@ class RolesController extends Controller
     public function edit(Role $role)
     {
         $this->authorize('role.edit', $role);
-
-
+//        $role->makeVisible('permissions_matrix');
         return view('web.role.edit', [
             'role' => $role,
         ]);
@@ -134,14 +127,13 @@ class RolesController extends Controller
     {
         // Sanitize input
         $sanitized = $request->getSanitized();
-
         // Update changed values Role
         $role->update($sanitized);
 
         if ($request->ajax()) {
             return [
                 'redirect' => url('roles'),
-                'message' => trans('savannabits/admin-ui::admin.operation.succeeded'),
+                'message' => trans('brackets/admin-ui::admin.operation.succeeded'),
             ];
         }
 
@@ -162,7 +154,7 @@ class RolesController extends Controller
         $role->delete();
 
         if ($request->ajax()) {
-            return response(['message' => trans('savannabits/admin-ui::admin.operation.succeeded')]);
+            return response(['message' => trans('brackets/admin-ui::admin.operation.succeeded')]);
         }
 
         return redirect()->back();
@@ -188,6 +180,18 @@ class RolesController extends Controller
                 });
         });
 
-        return response(['message' => trans('savannabits/admin-ui::admin.operation.succeeded')]);
+        return response(['message' => trans('brackets/admin-ui::admin.operation.succeeded')]);
     }
+
+    /*public function export(Request $request) {
+        $type = "pdf";
+        if ($request->has('type')) {
+            $type = $request->type;
+        }
+        if (strtolower($type)==='pdf') {
+            return $this->pdf($request);
+        } else {
+            return $this->xlsx($request);
+        }
+    }*/
 }

@@ -6,11 +6,14 @@
     "/js//js/web.js": "/js//js/web.js",
     "/js/example-component.js": "/js/example-component.js",
     "/js/login-component.js": "/js/login-component.js",
-    "/css/app.css": "/css/app.css?id=11f9ac7f1cadc0da2bed",
-    "/css/admin.css": "/css/admin.css?id=f540cb78d2f3d74954f1",
-    "/css/wizard.css": "/css/wizard.css?id=01dcf98475ce33a3f4f0",
+    "/css/app.css": "/css/app.css",
+    "/css/admin.css": "/css/admin.css",
+    "/css/wizard.css": "/css/wizard.css",
     "/js/role-listing.js": "/js/role-listing.js",
     "/js/role-form.js": "/js/role-form.js",
     "/js/user-form.js": "/js/user-form.js",
-    "/js/user-listing.js": "/js/user-listing.js"
+    "/js/user-listing.js": "/js/user-listing.js",
+    "/js/vendors~typeahead.js": "/js/vendors~typeahead.js",
+    "/js/vendors~flatpickr-datetime.js": "/js/vendors~flatpickr-datetime.js",
+    "/js/home-component.js": "/js/home-component.js"
 }

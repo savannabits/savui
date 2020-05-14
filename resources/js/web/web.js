@@ -1,11 +1,9 @@
 import './bootstrap';
 
 // import 'vue-multiselect/dist/vue-multiselect.min.css';
-import flatPickr from 'vue-flatpickr-component';
 import VueQuillEditor from 'vue-quill-editor';
 import Vue2Filters from "vue2-filters";
 import Notifications from 'vue-notification';
-import Multiselect from 'vue-multiselect';
 import VeeValidate from 'vee-validate';
 import 'flatpickr/dist/flatpickr.css';
 import VueCookie from 'vue-cookie';
@@ -20,17 +18,18 @@ import './app-components/bootstrap';
 import './index';
 
 import 'craftable/dist/ui';
-import VueBootstrapTypeahead from "vue-bootstrap-typeahead"
 import VueFormWizard from "vue-form-wizard";
-Vue.component('multiselect', Multiselect);
-Vue.component('typeahead', VueBootstrapTypeahead);
+import VueTailwind from "vue-tailwind";
+Vue.component('multiselect', ()=>import(/*webpackChunkName: 'vue-multiselect'*/ "vue-multiselect"));
+Vue.component('typeahead', () => import(/*webpackChunkName: 'typeahead'*/ "vue-bootstrap-typeahead"));
 Vue.use(VeeValidate, {strict: true});
-Vue.component('datetime', flatPickr);
+Vue.component('datetime', () => import(/* webpackChunkName: 'flatpickr-datetime'*/ "vue-flatpickr-component")) ;
 Vue.use(VueFormWizard,{
     color: "blue"
 })
 Vue.use(BootstrapVue);
 Vue.use(BootstrapVueIcons);
+Vue.use(VueTailwind);
 Vue.use(VModal, { dialog: true, dynamic: true, injectModalsContainer: true });
 Vue.use(VueQuillEditor);
 Vue.use(Notifications);
