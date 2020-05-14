@@ -2,7 +2,7 @@ const LoginComponent = {
     data: () => ({
     }),
     mounted() {
-        console.log("Here I am ");
-    }
+        console.log("Login component is loaded");
+    },
 }
 export default LoginComponent

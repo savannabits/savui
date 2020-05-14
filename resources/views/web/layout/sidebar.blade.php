@@ -3,6 +3,10 @@
         <ul class="nav">
             <li class="nav-title">{{ trans('savannabits/admin-ui::admin.sidebar.content') }}</li>
 {{--           <li class="nav-item"><a class="nav-link" href="{{ url('menu-items') }}"><i class="nav-icon icon-graduation"></i> {{ trans('admin.menu-item.title') }}</a></li>--}}
+           <li class="nav-item"><a class="nav-link" href="{{ url('service-endpoints') }}"><i class="nav-icon icon-compass"></i> {{ trans('admin.service-endpoint.title') }}</a></li>
+           <li class="nav-item"><a class="nav-link" href="{{ url('service-endpoints') }}"><i class="nav-icon icon-diamond"></i> {{ trans('admin.service-endpoint.title') }}</a></li>
+           <li class="nav-item"><a class="nav-link" href="{{ url('service-endpoints') }}"><i class="nav-icon icon-flag"></i> {{ trans('admin.service-endpoint.title') }}</a></li>
+           <li class="nav-item"><a class="nav-link" href="{{ url('service-endpoints') }}"><i class="nav-icon icon-umbrella"></i> {{ trans('admin.service-endpoint.title') }}</a></li>
            {{-- Do not delete me :) I'm used for auto-generation menu items --}}
 
             <li class="nav-item nav-dropdown">

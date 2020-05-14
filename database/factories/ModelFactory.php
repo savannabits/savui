@@ -62,3 +62,16 @@ $factory->define(App\Permission::class, static function (Faker\Generator $faker)
         
     ];
 });
+/** @var  \Illuminate\Database\Eloquent\Factory $factory */
+$factory->define(App\ServiceEndpoint::class, static function (Faker\Generator $faker) {
+    return [
+        'name' => $faker->firstName,
+        'endpoint' => $faker->sentence,
+        'description' => $faker->text(),
+        'enabled' => $faker->boolean(),
+        'created_at' => $faker->dateTime,
+        'updated_at' => $faker->dateTime,
+        
+        
+    ];
+});

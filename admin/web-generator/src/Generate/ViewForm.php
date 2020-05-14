@@ -189,7 +189,8 @@ class ViewForm extends ViewGenerator {
 		$indexJsPath = resource_path('js/web/'.$this->modelJSName.'/index.js');
 		$bootstrapJsPath = resource_path('js/web/index.js');
 
-		if ($this->appendIfNotAlreadyAppended($indexJsPath, "import './Form';".PHP_EOL)){
+        $content = "Vue.component('$this->modelJSName-form', () => import(/* webpackChunkName: '$this->modelJSName-form' */ './Form'));";
+		if ($this->appendIfNotAlreadyAppended($indexJsPath, $content.PHP_EOL)){
 			$this->info('Appending Form to '.$indexJsPath.' finished');
 		};
 		if ($this->appendIfNotAlreadyAppended($bootstrapJsPath, "import './".$this->modelJSName."';".PHP_EOL)){

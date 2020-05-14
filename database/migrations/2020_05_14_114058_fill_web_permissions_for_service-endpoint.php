@@ -1,51 +1,47 @@
-@php echo "<?php"
-@endphp
-
+<?php
 
 use Carbon\Carbon;
 use Illuminate\Config\Repository;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Support\Facades\DB;
 
-class {{ $className }} extends Migration
+class FillWebPermissionsForServiceEndpoint extends Migration
 {
     /**
-     * {{'@'}}var Repository|mixed
+     * @var Repository|mixed
      */
     protected $guardName;
     /**
-     * {{'@'}}var array
+     * @var array
      */
     protected $permissions;
     /**
-     * {{'@'}}var array
+     * @var array
      */
     protected $roles;
 
     /**
-     * {{'@'}}var string
+     * @var string
      */
     protected $group;
     /**
-     * {{ $className }} constructor.
+     * FillWebPermissionsForServiceEndpoint constructor.
      */
     public function __construct()
     {
         $this->guardName = config('auth.defaults.guard');
-        $explode = explode(".",'{{ $modelDotNotation }}');
+        $explode = explode(".",'service-endpoint');
         $this->group = isset($explode[1]) ? $explode[1] : $explode[0];
 
         $permissions = collect([
-            '{{ $modelDotNotation }}',
-            '{{ $modelDotNotation }}.index',
-            '{{ $modelDotNotation }}.create',
-            '{{ $modelDotNotation }}.show',
-            '{{ $modelDotNotation }}.edit',
-            '{{ $modelDotNotation }}.delete',
-            @if(!$withoutBulk)
-                '{{ $modelDotNotation }}.bulk-delete',
-            @endif
-        ]);
+            'service-endpoint',
+            'service-endpoint.index',
+            'service-endpoint.create',
+            'service-endpoint.show',
+            'service-endpoint.edit',
+            'service-endpoint.delete',
+                            'service-endpoint.bulk-delete',
+                    ]);
 
         //Add New permissions
         $this->permissions = $permissions->map(function ($permission) {
@@ -71,7 +67,7 @@ class {{ $className }} extends Migration
     /**
      * Run the migrations.
      *
-     * {{'@'}}return void
+     * @return void
      */
     public function up(): void
     {
@@ -128,7 +124,7 @@ class {{ $className }} extends Migration
     /**
      * Reverse the migrations.
      *
-     * {{'@'}}return void
+     * @return void
      */
     public function down(): void
     {

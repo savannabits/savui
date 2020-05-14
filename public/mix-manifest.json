@@ -15,5 +15,7 @@
     "/js/user-listing.js": "/js/user-listing.js",
     "/js/vendors~typeahead.js": "/js/vendors~typeahead.js",
     "/js/vendors~flatpickr-datetime.js": "/js/vendors~flatpickr-datetime.js",
-    "/js/home-component.js": "/js/home-component.js"
+    "/js/home-component.js": "/js/home-component.js",
+    "/js/service-endpoint-form.js": "/js/service-endpoint-form.js",
+    "/js/service-endpoint-listing.js": "/js/service-endpoint-listing.js"
 }

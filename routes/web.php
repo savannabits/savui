@@ -117,3 +117,20 @@ Route::middleware(['auth:' . config('auth.defaults.guard')])->group(static funct
         });
     });
 });
+
+
+/* Auto-generated web routes */
+Route::middleware(['auth:' . config('auth.defaults.guard')])->group(static function () {
+    Route::prefix('')->namespace('Web')->name('web/')->group(static function() {
+        Route::prefix('service-endpoints')->name('service-endpoints/')->group(static function() {
+            Route::get('/',                                             'ServiceEndpointsController@index')->name('index');
+            Route::get('/create',                                       'ServiceEndpointsController@create')->name('create');
+            Route::post('/',                                            'ServiceEndpointsController@store')->name('store');
+            Route::get('/{serviceEndpoint}/edit',                       'ServiceEndpointsController@edit')->name('edit');
+            Route::get('/{serviceEndpoint}/show',                       'ServiceEndpointsController@show')->name('show');
+            Route::post('/bulk-destroy',                                'ServiceEndpointsController@bulkDestroy')->name('bulk-destroy');
+            Route::post('/{serviceEndpoint}',                           'ServiceEndpointsController@update')->name('update');
+            Route::delete('/{serviceEndpoint}',                         'ServiceEndpointsController@destroy')->name('destroy');
+        });
+    });
+});

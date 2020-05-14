@@ -59,6 +59,36 @@ class RoleController extends Controller
             return jsonRes(false, $exception->getMessage(),[],400);
         }
     }
+    public function togglePermissionGroup(Request $request, Role $role) {
+        try {
+            $this->authorize('role.edit', $role);
+            $request->validate([
+                "permission_group" => ["required","string"],
+                "checked" => ["boolean"]
+            ]);
+
+            $perm = perm($request->permission,$role->guard_name);
+            if (!$perm) {
+                return jsonRes(false, "The permission $request->permission could not be found on the $role->guard_name guard",[],404);
+            }
+            if ($request->checked) {
+                $role->givePermissionTo($perm->name);
+            } else {
+                if ($role->hasPermissionTo($perm->name)) {
+                    $role->revokePermissionTo($perm->name);
+                }
+            }
+            $res = $perm->toArray();
+            $res["checked"] = $request->checked;
+            return jsonRes(true, "Permission has been updated",collect($res));
+        } catch (ValidationException $exception) {
+            return jsonRes(false, $exception->validator->getMessageBag()->first(),[],422);
+        } catch (AuthorizationException $exception) {
+            return jsonRes(false, $exception->getMessage(),[],403);
+        } catch (\Throwable $exception) {
+            return jsonRes(false, $exception->getMessage(),[],400);
+        }
+    }
     public function toggleAllPermissions(Request $request, Role $role) {
         try {
             $this->authorize('role.edit',$role);

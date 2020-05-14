@@ -102,8 +102,8 @@ class ViewIndex extends ViewGenerator {
             $this->info('Generating '.$listingJsPath.' finished');
         }
 
-
-		if ($this->appendIfNotAlreadyAppended($indexJsPath, "import './Listing';".PHP_EOL)){
+        $content = "Vue.component('$this->modelJSName-listing', () => import(/* webpackChunkName: '$this->modelJSName-listing'*/ './Listing'));";
+		if ($this->appendIfNotAlreadyAppended($indexJsPath, $content.PHP_EOL)){
 			$this->info('Appending Listing to '.$indexJsPath.' finished');
 		}
 		if ($this->appendIfNotAlreadyAppended($bootstrapJsPath, "import './". $this->modelJSName ."';".PHP_EOL)){

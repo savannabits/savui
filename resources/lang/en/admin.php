@@ -98,7 +98,27 @@ return [
         ],
     ],
 
+    'service-endpoint' => [
+        'title' => 'Service Endpoints',
+
+        'actions' => [
+            'index' => 'Service Endpoints',
+            'create' => 'New Service Endpoint',
+            'edit' => 'Edit :name',
+        ],
+
+        'columns' => [
+            'id' => 'ID',
+            'name' => 'Name',
+            'endpoint' => 'Endpoint',
+            'description' => 'Description',
+            'enabled' => 'Enabled',
+            
+        ],
+    ],
+
     // Do not delete me :) I'm used for auto-generation
+
 
 
 ];

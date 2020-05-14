@@ -7,6 +7,7 @@ namespace {{ $controllerNamespace }};
 @if($export)
 use App\Exports\{{$exportBaseName}};
 @endif
+use App\Helpers\SavbitsHelper;
 use App\Http\Controllers\Controller;
 @if(!$withoutBulk)
 use App\Http\Requests\Web\{{ $modelWithNamespaceFromDefault }}\BulkDestroy{{ $modelBaseName }};
@@ -58,32 +59,9 @@ class {{ $controllerBaseName }} extends Controller
     public function index(Index{{ $modelBaseName }} $request)
     {
         // create and AdminListing instance for a specific model and
-        $data = AdminListing::create({{ $modelBaseName }}::class)->processRequestAndGet(
-            // pass the request with params
-            $request,
-
-            // set columns to query
-            ['{!! implode('\', \'', $columnsToQuery) !!}'],
-
-            // set columns to searchIn
-            ['{!! implode('\', \'', $columnsToSearchIn) !!}']@if(in_array('created_by_admin_user_id', $columnsToQuery) || in_array('updated_by_admin_user_id', $columnsToQuery)),@endif
-
-@if(in_array('created_by_admin_user_id', $columnsToQuery) || in_array('updated_by_admin_user_id', $columnsToQuery))
-    @if(in_array('created_by_admin_user_id', $columnsToQuery) && in_array('updated_by_admin_user_id', $columnsToQuery))
-        function ($query) use ($request) {
-                $query->with(['createdByAdminUser', 'updatedByAdminUser']);
-            }
-    @elseif(in_array('created_by_admin_user_id', $columnsToQuery))
-        function ($query) use ($request) {
-                $query->with(['createdByAdminUser']);
-            }
-    @elseif(in_array('updated_by_admin_user_id', $columnsToQuery))
-        function ($query) use ($request) {
-                $query->with(['updatedByAdminUser']);
-            }
-    @endif
-@endif()
-        );
+        $data = SavbitsHelper::listing({{ $modelBaseName }}::class, $request)->customQuery(function($q) {
+            //TODO: Insert your query modification here
+        })->process();
 
         if ($request->ajax()) {
 @if(!$withoutBulk)
@@ -142,8 +120,8 @@ class {{ $controllerBaseName }} extends Controller
 @endif()
 
         // Store the {{ $modelBaseName }}
-        ${{ $modelVariableName }} = {{ $modelBaseName }}::create($sanitized);
-
+        ${{ $modelVariableName }} = new {{ $modelBaseName }}($sanitized);
+        ${{ $modelVariableName }}->saveOrFail();
 @if (count($relations))
 @if (count($relations['belongsToMany']))
 @foreach($relations['belongsToMany'] as $belongsToMany)
@@ -171,32 +149,32 @@ class {{ $controllerBaseName }} extends Controller
     {
         $this->authorize('{{ $modelDotNotation }}.show', ${{ $modelVariableName }});
 
-        @if(in_array('created_by_admin_user_id', $columnsToQuery) || in_array('updated_by_admin_user_id', $columnsToQuery))
-            @if(in_array('created_by_admin_user_id', $columnsToQuery) && in_array('updated_by_admin_user_id', $columnsToQuery))
+@if(in_array('created_by_admin_user_id', $columnsToQuery) || in_array('updated_by_admin_user_id', $columnsToQuery))
+    @if(in_array('created_by_admin_user_id', $columnsToQuery) && in_array('updated_by_admin_user_id', $columnsToQuery))
                 ${{ $modelVariableName }}->load(['createdByAdminUser', 'updatedByAdminUser']);
-            @elseif(in_array('created_by_admin_user_id', $columnsToQuery))
+    @elseif(in_array('created_by_admin_user_id', $columnsToQuery))
                 ${{ $modelVariableName }}->load('createdByAdminUser');
-            @elseif(in_array('updated_by_admin_user_id', $columnsToQuery))
+    @elseif(in_array('updated_by_admin_user_id', $columnsToQuery))
                 ${{ $modelVariableName }}->load('updatedByAdminUser');
-            @endif
-        @endif()
+    @endif
+@endif()
 
-        @if (count($relations))
-            @if (count($relations['belongsToMany']))
-                @foreach($relations['belongsToMany'] as $belongsToMany)
+@if (count($relations))
+    @if (count($relations['belongsToMany']))
+        @foreach($relations['belongsToMany'] as $belongsToMany)
                     ${{ $modelVariableName }}->load('{{ $belongsToMany['related_table'] }}');
-                @endforeach
-            @endif
-        @endif
+        @endforeach
+    @endif
+@endif
         return view('web.{{ $modelDotNotation }}.show', [
         '{{ $modelVariableName }}' => ${{ $modelVariableName }},
-        @if (count($relations))
-            @if (count($relations['belongsToMany']))
-                @foreach($relations['belongsToMany'] as $belongsToMany)
+@if (count($relations))
+    @if (count($relations['belongsToMany']))
+        @foreach($relations['belongsToMany'] as $belongsToMany)
                     '{{ $belongsToMany['related_table'] }}' => {{ $belongsToMany['related_model_name'] }}::all(),
-                @endforeach
-            @endif
-        @endif
+        @endforeach
+    @endif
+@endif
         ]);
     }
 

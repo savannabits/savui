@@ -14,7 +14,7 @@ var LoginComponent = {
     return {};
   },
   mounted: function mounted() {
-    console.log("Here I am ");
+    console.log("Login component is loaded");
   }
 };
 /* harmony default export */ __webpack_exports__["default"] = (LoginComponent);

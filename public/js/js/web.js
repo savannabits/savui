@@ -49277,7 +49277,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _role__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./role */ "./resources/js/web/role/index.js");
 /* harmony import */ var _role__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_role__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _permission__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./permission */ "./resources/js/web/permission/index.js");
+/* harmony import */ var _service_endpoint__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./service-endpoint */ "./resources/js/web/service-endpoint/index.js");
+/* harmony import */ var _service_endpoint__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_service_endpoint__WEBPACK_IMPORTED_MODULE_3__);
 //IMPORT COMPONENTS HERE
+
 
 
 
@@ -49357,6 +49360,22 @@ Vue.component('role-listing', function () {
 });
 Vue.component('role-form', function () {
   return __webpack_require__.e(/*! import() | role-form */ "role-form").then(__webpack_require__.bind(null, /*! ./Form */ "./resources/js/web/role/Form.js"));
+});
+
+/***/ }),
+
+/***/ "./resources/js/web/service-endpoint/index.js":
+/*!****************************************************!*\
+  !*** ./resources/js/web/service-endpoint/index.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+Vue.component('service-endpoint-listing', function () {
+  return __webpack_require__.e(/*! import() | service-endpoint-listing */ "service-endpoint-listing").then(__webpack_require__.bind(null, /*! ./Listing */ "./resources/js/web/service-endpoint/Listing.js"));
+});
+Vue.component('service-endpoint-form', function () {
+  return __webpack_require__.e(/*! import() | service-endpoint-form */ "service-endpoint-form").then(__webpack_require__.bind(null, /*! ./Form */ "./resources/js/web/service-endpoint/Form.js"));
 });
 
 /***/ }),
