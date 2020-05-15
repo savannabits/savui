@@ -89,16 +89,6 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/ramsey/collection" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/ramsey/uuid" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sabberworm/php-css-parser" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/savannabits/admin-auth" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/savannabits/admin-generator" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/savannabits/admin-listing" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/savannabits/admin-translations" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/savannabits/admin-ui" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/savannabits/advanced-logger" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/savannabits/craftable" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/savannabits/media" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/savannabits/translatable" />
-      <excludeFolder url="file://$MODULE_DIR$/vendor/savannabits/web-generator" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/scrivo/highlight.php" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/code-unit-reverse-lookup" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/sebastian/comparator" />

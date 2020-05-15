@@ -30,8 +30,9 @@
                                     </div>
                                     <div class="col-sm-auto form-group ">
                                         <select class="form-control" v-model="pagination.state.per_page">
-                                            
+
                                             <option value="10">10</option>
+                                            <option value="15">15</option>
                                             <option value="25">25</option>
                                             <option value="100">100</option>
                                         </select>
@@ -52,19 +53,9 @@
                                         <th is='sortable' :column="'id'">{{ trans('admin.permission.columns.id') }}</th>
                                         <th is='sortable' :column="'name'">{{ trans('admin.permission.columns.name') }}</th>
                                         <th is='sortable' :column="'guard_name'">{{ trans('admin.permission.columns.guard_name') }}</th>
+                                        <th is='sortable' :column="'group'">{{ trans('Perm Group') }}</th>
 
                                         <th></th>
-                                    </tr>
-                                    <tr v-show="(clickedBulkItemsCount > 0) || isClickedAll">
-                                        <td class="bg-bulk-info d-table-cell text-center" colspan="5">
-                                            <span class="align-middle font-weight-light text-dark">{{ trans('savannabits/admin-ui::admin.listing.selected_items') }} @{{ clickedBulkItemsCount }}.  <a href="#" class="text-primary" @click="onBulkItemsClickedAll('/admin/permissions')" v-if="(clickedBulkItemsCount < pagination.state.total)"> <i class="fa" :class="bulkCheckingAllLoader ? 'fa-spinner' : ''"></i> {{ trans('savannabits/admin-ui::admin.listing.check_all_items') }} @{{ pagination.state.total }}</a> <span class="text-primary">|</span> <a
-                                                        href="#" class="text-primary" @click="onBulkItemsClickedAllUncheck()">{{ trans('savannabits/admin-ui::admin.listing.uncheck_all_items') }}</a>  </span>
-
-                                            <span class="pull-right pr-2">
-                                                <button class="btn btn-sm btn-danger pr-3 pl-3" @click="bulkDelete('https://csm.strathmore.edu/mystrath/permissions/bulk-destroy')">{{ trans('savannabits/admin-ui::admin.btn.delete') }}</button>
-                                            </span>
-
-                                        </td>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -75,18 +66,19 @@
                                             </label>
                                         </td>
 
-                                    <td>@{{ item.id }}</td>
+                                        <td>@{{ item.id }}</td>
                                         <td>@{{ item.name }}</td>
                                         <td>@{{ item.guard_name }}</td>
-                                        
+                                        <td>@{{ item.group }}</td>
+
                                         <td>
                                             <div class="row no-gutters">
                                                 <div class="col-auto">
-                                                    <a class="btn btn-sm btn-spinner btn-info" :href="item.resource_url + '/edit'" title="{{ trans('savannabits/admin-ui::admin.btn.edit') }}" role="button"><i class="fa fa-edit"></i></a>
+{{--                                                    <a class="btn btn-sm btn-spinner btn-info" :href="item.resource_url + '/edit'" title="{{ trans('savannabits/admin-ui::admin.btn.edit') }}" role="button"><i class="fa fa-edit"></i></a>--}}
                                                 </div>
-                                                <form class="col" @submit.prevent="deleteItem(item.resource_url)">
+                                                {{--<form class="col" @submit.prevent="deleteItem(item.resource_url)">
                                                     <button type="submit" class="btn btn-sm btn-danger" title="{{ trans('savannabits/admin-ui::admin.btn.delete') }}"><i class="fa fa-trash-o"></i></button>
-                                                </form>
+                                                </form>--}}
                                             </div>
                                         </td>
                                     </tr>

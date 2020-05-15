@@ -2,5 +2,15 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/admin/admin-auth" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/admin/admin-generator" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/admin/admin-listing" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/admin/admin-translations" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/admin/admin-ui" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/admin/advanced-logger" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/admin/craftable" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/admin/media" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/admin/translatable" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/admin/web-generator" vcs="Git" />
   </component>
 </project>

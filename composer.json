@@ -1,9 +1,15 @@
 {
-    "name": "laravel/laravel",
+    "name": "savannabits/boilerplate",
     "type": "project",
-    "description": "The Laravel Framework.",
+    "description": "A Laravel 7 Boilerplate fully configured with craftable web generator, spatie roles and permissions as well as user management using cas login. (originally designed for strathmore.edu development.)",
     "keywords": [
         "framework",
+        "savannabits",
+        "craftable",
+        "cas",
+        "boilerplate",
+        "web-generator",
+        "admin-generator",
         "laravel"
     ],
     "license": "MIT",
@@ -24,9 +30,9 @@
         "laravel/tinker": "^2.0",
         "laravel/ui": "^2.0",
         "owen-it/laravel-auditing": "^10.0",
-        "savannabits/admin-generator": "^5.0@dev",
-        "savannabits/craftable": "^5.0@dev",
-        "savannabits/web-generator": "^5.0@dev",
+        "savannabits/admin-generator": "^7.0",
+        "savannabits/craftable": "^7.0",
+        "savannabits/web-generator": "^7.0",
         "subfission/cas": "3.1.0",
         "teamtnt/laravel-scout-tntsearch-driver": "^8.1"
     },
@@ -39,48 +45,7 @@
         "nunomaduro/collision": "^4.1",
         "phpunit/phpunit": "^8.5"
     },
-    "repositories": [
-        {
-            "type": "path",
-            "url": "./admin/admin-auth"
-        },
-        {
-            "type": "path",
-            "url": "./admin/admin-generator"
-        },
-        {
-            "type": "path",
-            "url": "./admin/admin-listing"
-        },
-        {
-            "type": "path",
-            "url": "./admin/admin-translations"
-        },
-        {
-            "type": "path",
-            "url": "./admin/admin-ui"
-        },
-        {
-            "type": "path",
-            "url": "./admin/advanced-logger"
-        },
-        {
-            "type": "path",
-            "url": "./admin/craftable"
-        },
-        {
-            "type": "path",
-            "url": "./admin/media"
-        },
-        {
-            "type": "path",
-            "url": "./admin/translatable"
-        },
-        {
-            "type": "path",
-            "url": "./admin/web-generator"
-        }
-    ],
+
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",

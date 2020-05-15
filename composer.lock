@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "0d9de46ddbb9d2ed96eeec3f1d62f1f6",
+    "content-hash": "50221b4a224fbd4a2c92a1a63f96bcca",
     "packages": [
         {
             "name": "apereo/phpcas",
@@ -3695,17 +3695,23 @@
         },
         {
             "name": "savannabits/admin-auth",
-            "version": "dev-master",
+            "version": "v7.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/savannabits/admin-auth.git",
+                "reference": "04f6a7c0a26ab834e3d40e053e0a85d259f82619"
+            },
             "dist": {
-                "type": "path",
-                "url": "./admin/admin-auth",
-                "reference": "d7bb599fd2615e667e06bd3d20c16efe412eed6c"
+                "type": "zip",
+                "url": "https://api.github.com/repos/savannabits/admin-auth/zipball/04f6a7c0a26ab834e3d40e053e0a85d259f82619",
+                "reference": "04f6a7c0a26ab834e3d40e053e0a85d259f82619",
+                "shasum": ""
             },
             "require": {
                 "illuminate/support": "^6.0|^7.0",
                 "php": "^7.2.5",
-                "savannabits/admin-ui": "^4.0",
-                "savannabits/media": "^4.0",
+                "savannabits/admin-ui": "^7.0",
+                "savannabits/media": "^7.0",
                 "spatie/laravel-permission": "^3.0"
             },
             "require-dev": {
@@ -3713,7 +3719,7 @@
                 "orchestra/testbench": "~4.0",
                 "phpunit/phpunit": "^8.5"
             },
-            "type": "project",
+            "type": "library",
             "extra": {
                 "laravel": {
                     "providers": [
@@ -3730,11 +3736,7 @@
                     "Savannabits\\AdminAuth\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Savannabits\\AdminAuth\\Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3748,25 +3750,29 @@
             ],
             "description": "Authentication interface for savannabits/admin-ui",
             "keywords": [
+                "Authentication",
                 "admin",
                 "auth",
-                "authentication",
                 "cms",
                 "laravel",
                 "login",
                 "user"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "time": "2020-05-15T06:47:18+00:00"
         },
         {
             "name": "savannabits/admin-generator",
-            "version": "dev-master",
+            "version": "v7.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/savannabits/admin-generator.git",
+                "reference": "185041bb643aace5ea53a073cebd125a4cecccad"
+            },
             "dist": {
-                "type": "path",
-                "url": "./admin/admin-generator",
-                "reference": "a7753301d945c88927d6c5f38a03e1d6d02f3cbd"
+                "type": "zip",
+                "url": "https://api.github.com/repos/savannabits/admin-generator/zipball/185041bb643aace5ea53a073cebd125a4cecccad",
+                "reference": "185041bb643aace5ea53a073cebd125a4cecccad",
+                "shasum": ""
             },
             "require": {
                 "doctrine/dbal": "^2.6.0",
@@ -3797,11 +3803,7 @@
                     "Savannabits\\AdminGenerator\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Savannabits\\AdminGenerator\\Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3823,17 +3825,21 @@
                 "laravel",
                 "make"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "time": "2020-05-15T06:36:27+00:00"
         },
         {
             "name": "savannabits/admin-listing",
-            "version": "dev-master",
+            "version": "v7.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/savannabits/admin-listing.git",
+                "reference": "f54830a4802bb23ad2243163898bab9e43d76a4e"
+            },
             "dist": {
-                "type": "path",
-                "url": "./admin/admin-listing",
-                "reference": "e2a948c7f19aa8d482d699640f1fefa726fcf9c6"
+                "type": "zip",
+                "url": "https://api.github.com/repos/savannabits/admin-listing/zipball/f54830a4802bb23ad2243163898bab9e43d76a4e",
+                "reference": "f54830a4802bb23ad2243163898bab9e43d76a4e",
+                "shasum": ""
             },
             "require": {
                 "illuminate/support": "^6.0|^7.0",
@@ -3844,9 +3850,9 @@
                 "mockery/mockery": "0.9.*|^1.0",
                 "orchestra/testbench": "~4.0",
                 "phpunit/phpunit": "^8.5",
-                "savannabits/translatable": "^2.0"
+                "savannabits/translatable": "^7.0"
             },
-            "type": "project",
+            "type": "library",
             "extra": {
                 "laravel": {
                     "providers": [
@@ -3863,11 +3869,7 @@
                     "Savannabits\\AdminListing\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Savannabits\\AdminListing\\Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3888,17 +3890,21 @@
                 "laravel",
                 "listing"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "time": "2020-05-15T07:59:35+00:00"
         },
         {
             "name": "savannabits/admin-translations",
-            "version": "dev-master",
+            "version": "v7.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/savannabits/admin-translations.git",
+                "reference": "1a6723d690833a03133b92c149ec851df2e1503f"
+            },
             "dist": {
-                "type": "path",
-                "url": "./admin/admin-translations",
-                "reference": "a195f6088b4aec31bff57f600e0f215bc95a8a55"
+                "type": "zip",
+                "url": "https://api.github.com/repos/savannabits/admin-translations/zipball/1a6723d690833a03133b92c149ec851df2e1503f",
+                "reference": "1a6723d690833a03133b92c149ec851df2e1503f",
+                "shasum": ""
             },
             "require": {
                 "illuminate/console": "^6.0|^7.0",
@@ -3907,9 +3913,9 @@
                 "illuminate/database": "^6.0|^7.0",
                 "illuminate/support": "^6.0|^7.0",
                 "php": "^7.2.5",
-                "savannabits/admin-listing": "^3.0",
-                "savannabits/admin-ui": "^4.0",
-                "savannabits/translatable": "^2.0"
+                "savannabits/admin-listing": "^7.0",
+                "savannabits/admin-ui": "^7.0",
+                "savannabits/translatable": "^7.0"
             },
             "require-dev": {
                 "doctrine/dbal": "~2.5.13|^2.6",
@@ -3917,7 +3923,7 @@
                 "orchestra/testbench": "~4.0",
                 "phpunit/phpunit": "^8.5"
             },
-            "type": "project",
+            "type": "library",
             "extra": {
                 "laravel": {
                     "providers": [
@@ -3934,11 +3940,7 @@
                     "Savannabits\\AdminTranslations\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Savannabits\\AdminTranslations\\Test\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -3957,19 +3959,24 @@
                 "laravel",
                 "localizations",
                 "manager",
+                "savannabits",
                 "translations"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "time": "2020-05-15T08:00:17+00:00"
         },
         {
             "name": "savannabits/admin-ui",
-            "version": "dev-master",
+            "version": "v7.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/savannabits/admin-ui.git",
+                "reference": "73ccdad3b2053ed2e5a2d089f50633a8ce6d9e81"
+            },
             "dist": {
-                "type": "path",
-                "url": "./admin/admin-ui",
-                "reference": "fe6720ea1de99fec70bfaf94e101cf168a655630"
+                "type": "zip",
+                "url": "https://api.github.com/repos/savannabits/admin-ui/zipball/73ccdad3b2053ed2e5a2d089f50633a8ce6d9e81",
+                "reference": "73ccdad3b2053ed2e5a2d089f50633a8ce6d9e81",
+                "shasum": ""
             },
             "require": {
                 "illuminate/support": "^6.0|^7.0",
@@ -3980,7 +3987,7 @@
                 "orchestra/testbench-browser-kit": "~4.0",
                 "phpunit/phpunit": "^8.5"
             },
-            "type": "project",
+            "type": "library",
             "extra": {
                 "laravel": {
                     "providers": [
@@ -3997,11 +4004,7 @@
                     "Savannabits\\AdminUI\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Savannabits\\AdminUI\\Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -4020,19 +4023,25 @@
                 "administration",
                 "cms",
                 "laravel",
+                "savannabits",
+                "savbits",
                 "template"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "time": "2020-05-15T07:17:06+00:00"
         },
         {
             "name": "savannabits/advanced-logger",
-            "version": "dev-master",
+            "version": "v7.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/savannabits/advanced-logger.git",
+                "reference": "997c9ac59be2bc1227de5182e7c54f608fb9f069"
+            },
             "dist": {
-                "type": "path",
-                "url": "./admin/advanced-logger",
-                "reference": "3aae60397bfc18237dc5362a0ad98ddf99803502"
+                "type": "zip",
+                "url": "https://api.github.com/repos/savannabits/advanced-logger/zipball/997c9ac59be2bc1227de5182e7c54f608fb9f069",
+                "reference": "997c9ac59be2bc1227de5182e7c54f608fb9f069",
+                "shasum": ""
             },
             "require": {
                 "ext-json": "*",
@@ -4046,7 +4055,7 @@
                 "orchestra/testbench": "~4.0",
                 "phpunit/phpunit": "^8.5"
             },
-            "type": "project",
+            "type": "library",
             "extra": {
                 "laravel": {
                     "providers": [
@@ -4063,11 +4072,7 @@
                     "Savannabits\\AdvancedLogger\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Savannabits\\AdvancedLogger\\Test\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -4084,30 +4089,34 @@
                 "logger",
                 "request logger"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "time": "2020-05-15T07:21:41+00:00"
         },
         {
             "name": "savannabits/craftable",
-            "version": "dev-master",
+            "version": "v7.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/savannabits/craftable.git",
+                "reference": "0d694676c885a094427f4ee6ffdbe9da3962c4ea"
+            },
             "dist": {
-                "type": "path",
-                "url": "./admin/craftable",
-                "reference": "ff03b815590d1ccc54cacca2948aba858fb66c43"
+                "type": "zip",
+                "url": "https://api.github.com/repos/savannabits/craftable/zipball/0d694676c885a094427f4ee6ffdbe9da3962c4ea",
+                "reference": "0d694676c885a094427f4ee6ffdbe9da3962c4ea",
+                "shasum": ""
             },
             "require": {
                 "illuminate/support": "^6.0|^7.0",
                 "maatwebsite/excel": "^3.1",
                 "php": "^7.2.5",
-                "savannabits/admin-auth": "^5.0",
-                "savannabits/admin-listing": "^3.0",
-                "savannabits/admin-translations": "^4.0",
-                "savannabits/admin-ui": "^4.0",
-                "savannabits/advanced-logger": "^2.0",
-                "savannabits/media": "^4.0",
-                "savannabits/translatable": "^2.0",
-                "spatie/laravel-backup": "^6.0",
+                "savannabits/admin-auth": "^7.0",
+                "savannabits/admin-listing": "^7.0",
+                "savannabits/admin-translations": "^7.0",
+                "savannabits/admin-ui": "^7.0",
+                "savannabits/advanced-logger": "^7.0",
+                "savannabits/media": "^7.0",
+                "savannabits/translatable": "^7.0",
+                "spatie/laravel-backup": "6.9.0",
                 "spatie/laravel-permission": "^3.0"
             },
             "type": "project",
@@ -4127,6 +4136,7 @@
                     "Savannabits\\Craftable\\": "src/"
                 }
             },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -4150,17 +4160,21 @@
                 "savannabits",
                 "toolkit"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "time": "2020-05-15T13:16:44+00:00"
         },
         {
             "name": "savannabits/media",
-            "version": "dev-master",
+            "version": "v7.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/savannabits/media.git",
+                "reference": "86819b200234e7550f0ad56be16fd692a2a5f7b6"
+            },
             "dist": {
-                "type": "path",
-                "url": "./admin/media",
-                "reference": "268de08a737b40851f73ee39876ead69e73971a4"
+                "type": "zip",
+                "url": "https://api.github.com/repos/savannabits/media/zipball/86819b200234e7550f0ad56be16fd692a2a5f7b6",
+                "reference": "86819b200234e7550f0ad56be16fd692a2a5f7b6",
+                "shasum": ""
             },
             "require": {
                 "illuminate/support": "^6.0|^7.0",
@@ -4188,11 +4202,7 @@
                     "Savannabits\\Media\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Savannabits\\Media\\Test\\": "tests"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -4212,17 +4222,21 @@
                 "media",
                 "medialibrary"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "time": "2020-05-15T07:34:06+00:00"
         },
         {
             "name": "savannabits/translatable",
-            "version": "dev-master",
+            "version": "v7.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/savannabits/translatable.git",
+                "reference": "23db89b55b75aff4a1e307bf0b1a26281a799733"
+            },
             "dist": {
-                "type": "path",
-                "url": "./admin/translatable",
-                "reference": "ad04035bb58161732ee58831ceea3546dfc76c3a"
+                "type": "zip",
+                "url": "https://api.github.com/repos/savannabits/translatable/zipball/23db89b55b75aff4a1e307bf0b1a26281a799733",
+                "reference": "23db89b55b75aff4a1e307bf0b1a26281a799733",
+                "shasum": ""
             },
             "require": {
                 "ext-json": "*",
@@ -4251,11 +4265,7 @@
                     "Savannabits\\Translatable\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Savannabits\\Translatable\\Test\\": "tests"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -4279,17 +4289,21 @@
                 "translate",
                 "translations"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "time": "2020-05-15T07:39:24+00:00"
         },
         {
             "name": "savannabits/web-generator",
-            "version": "dev-master",
+            "version": "v7.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/savannabits/web-generator.git",
+                "reference": "eff7354646a37c3668b2d2df198546653bae172b"
+            },
             "dist": {
-                "type": "path",
-                "url": "./admin/web-generator",
-                "reference": "7f8947b81cd7fca23b42f760ba563c0e2bacc7ef"
+                "type": "zip",
+                "url": "https://api.github.com/repos/savannabits/web-generator/zipball/eff7354646a37c3668b2d2df198546653bae172b",
+                "reference": "eff7354646a37c3668b2d2df198546653bae172b",
+                "shasum": ""
             },
             "require": {
                 "doctrine/dbal": "^2.6.0",
@@ -4320,11 +4334,7 @@
                     "Savannabits\\WebGenerator\\": "src/"
                 }
             },
-            "autoload-dev": {
-                "psr-4": {
-                    "Savannabits\\WebGenerator\\Tests\\": "tests/"
-                }
-            },
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "MIT"
             ],
@@ -4344,11 +4354,11 @@
                 "crud",
                 "generator",
                 "laravel",
-                "make"
+                "make",
+                "savannaits",
+                "strathmore"
             ],
-            "transport-options": {
-                "relative": true
-            }
+            "time": "2020-05-15T06:24:06+00:00"
         },
         {
             "name": "spatie/db-dumper",
@@ -9765,11 +9775,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "savannabits/admin-generator": 20,
-        "savannabits/craftable": 20,
-        "savannabits/web-generator": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

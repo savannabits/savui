@@ -10,7 +10,7 @@
         "laravel"
     ],
     "license": "MIT",
-    "type": "project",
+    "type": "library",
     "authors": [
         {
             "name": "Samson Maosa",
@@ -28,7 +28,7 @@
         "mockery/mockery": "0.9.*|^1.0",
         "phpunit/phpunit": "^8.5",
         "orchestra/testbench": "~4.0",
-        "savannabits/translatable": "^2.0"
+        "savannabits/translatable": "^7.0"
     },
     "autoload": {
         "classmap": [],

@@ -7,10 +7,11 @@
         "manager",
         "admin",
         "cms",
-        "laravel"
+        "laravel",
+        "savannabits"
     ],
     "license": "MIT",
-    "type": "project",
+    "type": "library",
     "authors": [
         {
             "name": "Samson Maosa",
@@ -26,9 +27,9 @@
         "illuminate/database": "^6.0|^7.0",
         "illuminate/support": "^6.0|^7.0",
         "illuminate/console": "^6.0|^7.0",
-        "savannabits/admin-ui": "^4.0",
-        "savannabits/admin-listing": "^3.0",
-        "savannabits/translatable": "^2.0"
+        "savannabits/admin-ui": "^7.0",
+        "savannabits/admin-listing": "^7.0",
+        "savannabits/translatable": "^7.0"
     },
     "require-dev": {
         "orchestra/testbench": "~4.0",

@@ -7,10 +7,12 @@
         "administration",
         "admin",
         "cms",
-        "laravel"
+        "laravel",
+        "savannabits",
+        "savbits"
     ],
     "license": "MIT",
-    "type": "project",
+    "type": "library",
     "authors": [
         {
             "name": "Samson Maosa",

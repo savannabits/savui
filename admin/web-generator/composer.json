@@ -8,10 +8,12 @@
         "admin",
         "cms",
         "laravel",
-        "craftable"
+        "craftable",
+        "savannaits",
+        "strathmore"
     ],
     "license": "MIT",
-    "type": "project",
+    "type": "library",
     "authors": [
         {
             "name": "Samson Maosa",

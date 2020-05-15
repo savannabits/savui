@@ -1,11 +1,12 @@
-# Admin Generator
+# Web Generator
 
-Admin Generator is a package that helps you quickly scaffold your typical CRUD admin interfaces. It generates the code based on the existing (migrated) table in the database. It uses an admin UI template from our other package `savannabits/admin-ui`.
+Web Generator is a package that helps you quickly scaffold your typical CRUD admin interfaces. It generates the code based on the existing (migrated) table in the database. It uses an admin UI template from our other package `savannabits/admin-ui`.
+This is inspired by the `brackets/admin-generator` package whose documentation can be found below:
 
 Example of an administration interface generated with this package:
 ![Craftable administration area example](https://docs.getcraftable.com/assets/posts-crud.png "Craftable administration area example")
 
-This packages is part of [Craftable](https://github.com/BRACKETS-by-TRIAD/craftable) (`savannabits/craftable`) - an administration starter kit for Laravel 5. You should definitely have a look :)
+This packages is part of [Craftable](https://github.com/savannabits/craftable) (`savannabits/craftable`) - an administration starter kit for Laravel 7. You should definitely have a look :)
 
 
 ## Documentation
@@ -13,4 +14,4 @@ You can find full documentation at https://docs.getcraftable.com/#/admin-generat
 
 ## Issues
 Where do I report issues?
-If something is not working as expected, please open an issue in the main repository https://github.com/BRACKETS-by-TRIAD/craftable.
+If something is not working as expected, please open an issue in the main repository https://github.com/savannabits/craftable.
