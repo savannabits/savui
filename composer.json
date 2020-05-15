@@ -1,5 +1,5 @@
 {
-    "name": "savannabits/boilerplate",
+    "name": "savannabits/savui",
     "type": "project",
     "description": "A Laravel 7 Boilerplate fully configured with craftable web generator, spatie roles and permissions as well as user management using cas login. (originally designed for strathmore.edu development.)",
     "keywords": [
